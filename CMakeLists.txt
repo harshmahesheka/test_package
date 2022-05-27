@@ -4,8 +4,8 @@ project(test_package)
 
 find_package(ignition-cmake2 REQUIRED)
 
-find_package(ignition-gazebo6 REQUIRED)
-set(IGN_GAZEBO_VER ${ignition-gazebo6_VERSION_MAJOR})
+find_package(ign_gazebo_dev REQUIRED)
+# set(IGN_GAZEBO_VER ${ignition-gazebo6_VERSION_MAJOR})
 find_package(ignition-common4 REQUIRED COMPONENTS graphics)
 set(IGN_COMMON_VER ${ignition-common4_VERSION_MAJOR})
 find_package(ignition-fuel_tools7 REQUIRED)

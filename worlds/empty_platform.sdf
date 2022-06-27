@@ -97,7 +97,16 @@
     model://elevator
     </uri>
 </include>
-    <plugin filename="HelloWorld" name="hello_world::HelloWorld">
-    </plugin>
+  <plugin filename="HelloWorld" name="hello_world::HelloWorld">
+  </plugin>
+  <gui fullscreen="0">
+      <plugin filename="ReferenceAxis" name="Reference axis">
+        <ignition-gui>
+          <title>Reference axis</title>
+          <property type="string" key="state">docked_collapsed</property>
+        </ignition-gui>
+        <fsk>tethys</fsk>
+      </plugin>
+  </gui>
   </world>
 </sdf>

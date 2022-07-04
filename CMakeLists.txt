@@ -43,7 +43,7 @@ ignition-rendering${IGN_RENDERING_VER}::ignition-rendering${IGN_RENDERING_VER}  
 #                   COMMON_PROTOC_OUT_DIR ${CMAKE_BINARY_DIR})
 add_subdirectory(msgs)
 
-ign_environment_hook(plain-cmake)
+ign_environment_hook(colcon)
 
 ################
 

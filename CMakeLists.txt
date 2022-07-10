@@ -4,7 +4,7 @@ project(test_package)
 
 find_package(ignition-cmake2 REQUIRED)
 find_package(Protobuf REQUIRED)
-
+find_package(Protobuf REQUIRED)
 find_package(ignition-gazebo6 REQUIRED)
 set(IGN_GAZEBO_VER ${ignition-gazebo6_VERSION_MAJOR})
 find_package(ignition-common4 REQUIRED COMPONENTS graphics)
@@ -38,12 +38,10 @@ ign_add_executables(examples COMMON_PUBLIC_LIBRARIES
 ign_export_variable(LD_LIBRARY_PATH @CMAKE_INSTALL_PREFIX@/lib)
 ign_add_plugins(gui_plugins COMMON_PUBLIC_LIBRARIES
 ignition-rendering${IGN_RENDERING_VER}::ignition-rendering${IGN_RENDERING_VER}  GUI true)
-# ign_add_msgs(msgs COMMON_LANGUAGE cpp 
-#                   COMMON_IMPORT_DIRS  ${ignition-msgs${IGN_MSGS_VER}_INCLUDE_DIRS} 
-#                   COMMON_PROTOC_OUT_DIR ${CMAKE_BINARY_DIR})
-add_subdirectory(msgs)
-
-ign_environment_hook(plain-cmake)
+ign_add_msgs(msgs COMMON_LANGUAGE cpp 
+                  COMMON_IMPORT_DIRS  ${ignition-msgs${IGN_MSGS_VER}_INCLUDE_DIRS} 
+                  COMMON_PROTOC_OUT_DIR ${CMAKE_BINARY_DIR})
+ign_environment_hook(colcon)
 
 ################
 
